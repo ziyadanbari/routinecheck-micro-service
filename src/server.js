@@ -7,11 +7,11 @@ const { configureSession } = require("./helpers/configureNewSession.helper.js");
 
 const app = express();
 const parsed = config().parsed;
-const { DB_URL, PORT } = parsed;
+const { PORT } = parsed;
 
 app.use(express.json());
 app.use("/api/v1/whatsapp/", router);
-connectToDB(DB_URL, async () => {
+connectToDB(process.env.DB_URL, async () => {
   try {
     await configureSession();
     await configureToken();
