@@ -5,7 +5,6 @@ async function configureSession() {
   global.client = new Client({
     authStrategy: new LocalAuth({
       clientId: "server",
-      dataPath: "../../whatsapp_auth",
     }),
   });
   client.on("qr", (qr) => {
