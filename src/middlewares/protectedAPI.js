@@ -1,7 +1,6 @@
 const { token } = require("../models/Token.js");
 
 const protectedAPI = async (req, res, next) => {
-  console.log(req.headers);
   const { authorization: sendedToken } = req.headers;
   try {
     const isCorrect = await token.find({ token: sendedToken });

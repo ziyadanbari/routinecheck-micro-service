@@ -11,5 +11,5 @@ const TokenSchema = new Schema({
   },
 });
 
-const token = model("tokens", TokenSchema);
+const token = model("whatsappservicetoken", TokenSchema);
 module.exports = { token };
