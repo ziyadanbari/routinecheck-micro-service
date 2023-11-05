@@ -11,9 +11,9 @@ const { DB_URL, PORT } = parsed;
 
 app.use(express.json());
 app.use("/api/v1/whatsapp/", router);
+configureSession();
 connectToDB(DB_URL, async () => {
   try {
-    await configureSession();
     await configureToken();
     app.listen(PORT, "0.0.0.0", (err) => {
       if (err) return console.log(err);

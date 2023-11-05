@@ -3,7 +3,7 @@ const sendMessage = async (req, res) => {
     const { phone, message } = req.body;
     await client.sendMessage(`${phone}@c.us`, message);
     console.log(`sending message to +${phone}`);
-    res.status(200).json("sended!");
+    res.status(200).json({ message: "sended!" });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: error });
